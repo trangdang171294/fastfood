@@ -59,8 +59,10 @@ $MonanController = new C_mon_an();
 
 <div class="noidung">
 
+
     <?php
-    $MonanController->Hien_thi_mon_an();
+    include_once ('site/home.php');
+  //  $MonanController->Hien_thi_mon_an();
     ?>
 
 </div>

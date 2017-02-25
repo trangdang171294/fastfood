@@ -67,11 +67,6 @@
                             <li><a class="at-drop-down" href="#">Thực đơn<i class="hidden-md hidden-lg fa fa-angle-down"></i></a>
                                 <ul class="sub-menu">
                                     <li><a href="?view=product_ga">Gà</a></li>
-                                    <li><a href="?view=product_burger">Burger</a></li>
-                                    <li><a href="?view=product_pasta">Mỳ ý</a></li>
-                                    <li><a href="?view=product_trangmieng">Món tráng miệng</a></li>
-                                    <li><a href="?view=product_drink">Đồ uống </a></li>
-                                    <li><a href="?view=product_combo">Combo</a></li>
                                 </ul>
                             </li>
                             <li><a href="?view=khuyenmai">Khuyến mại</a></li>

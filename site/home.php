@@ -14,7 +14,7 @@
             <h1 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="1500"><span>Món ăn ngon mỗi ngày</span> </h1>
             <h3 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="2300"><a href="?view=product_ga">đặt hàng ngay</a></h3>
         </div>
-        <div class="pogoSlider-slide" data-transition="fade" style="background:url(img/slider/comcojpg.jpg) no-repeat scroll 0 0 / cover;">
+        <div class="pogoSlider-slide" data-transition="fade" style="background:url(img/slider/02_218.jpg) no-repeat scroll 0 0 / cover;">
             <h1 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="1500">khuyến mại hấp dẫn</h1>
             <h3 class="pogoSlider-slide-element" data-in="expand" data-out="expand" data-duration="2300"><a href="?view=khuyenmai">xem thêm</a></h3>
         </div>
@@ -69,7 +69,7 @@
                 <div class="content">
                     <h1>Thực đơn</h1>
                     <p>Thực đơn  đa dạng và phong phú, có rất nhiều sự lựa chọn cho bạn, gia đình và bạn bè.</p>
-                    <div class="book-table-popup">
+                    <div class="book-table-popup" id="popup-bottom">
                         <a href="#">ĐẶT HÀNG</a>
                     </div>
                 </div>

@@ -1,49 +1,3 @@
-/*--------------------------------------------------------------------------------------
-Theme Name: OWL RESTAURANT
-Theme URI: http://devitfamily.com
-Author URI: http://devitfamily.com
-Description: 100% Responsive, Highly Customizable, SEO Friendly Restaurant HTML template using Twitter Bootstrap Latest, Search Engine Friendly.
-Author: BDEXPERT
-Version: 1.0
-----------------------------------------------------------------------------------------
-   1. BASE CSS
-    2. TOP AREA
-        2.1 MAINMENU AREA
-        2.2 SLIDER AREA
-        2.3 SEARCH FORM AREA
-    3. ABOUT AREA
-    4. PROMOTIONS AREA
-    5. MENUS AREA
-    6. EVENT AREA
-    7. TEAM AREA
-    8. BLOG AREA
-    9. INSTAGRAM FEED AREA
-    10. FOOTER AREA
-    11. SCROLL TO TOP
-    12. HOME PAGE TWO
-        12.1 ABOUT AREA
-        12.2 PROMOTIONS AREA
-        12.3 MENU AREA
-    13. HONE THREE
-        13.1 ABOUT AREA
-        13.2 PROMOTIONS AREA
-    14. ABOUT PAGE
-        14.1 COUNTER AREA
-        14.2 TESTOMONIAL AREA
-    15. RESERVATION PAGE
-        15.1 RESERVATION AREA
-    16. EVENTS PAGE
-    17. EVENT DETAILS
-    18. BLOG PAGE
-        18.1 SIDEBAR AREA
-    19. SINGLE BLOG PAGE
-    20. MENU PAGE
-    21. CONTACT US PAGE
-    22. 404 ERROR PAGE
-
-
-----------------------------------------------------------------------------------------*/
-
 
 /*--------------------
    1. BASE CSS
@@ -205,6 +159,9 @@ input:-webkit-autofill:focus {
 .book-table-popup {
     float: right;
     padding: 5px;
+}
+#popup-bottom{
+    padding-top: 50px;
 }
 
 .top-social-bookmark ul {
@@ -449,7 +406,7 @@ ul#nav ul li:hover a {
     width: 100%;
     z-index: 999;
     text-transform: uppercase;
-    background-color: rgba(0, 0, 0, 0.59);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .slider-area {
@@ -505,26 +462,15 @@ ul#nav ul li:hover a {
 }
 
 .pogoSlider-slide {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+
     align-items: center;
     background-size: cover;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     height: 100%;
     opacity: 0;
-    overflow: hidden;
-    -webkit-perspective: 1300px;
-    perspective: 1300px;
     position: absolute;
     width: 100%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     padding-top: 5%
 }
@@ -629,9 +575,7 @@ a.search-form-trigger::before {
     box-shadow: inset 0 1px 0 #e2e3df, 0 3px 6px rgba(0, 0, 0, 0.05);
     -webkit-appearance: none;
     -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
+
 }
 
 .search-form input::-webkit-input-placeholder {
@@ -680,8 +624,6 @@ a.search-form-trigger::before {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s, -webkit-transform 0.3s 0s;
-    transition: opacity 0.3s 0s, visibility 0s 0.3s, -webkit-transform 0.3s 0s;
-    transition: opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s;
     transition: opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s, -webkit-transform 0.3s 0s;
 }
 
@@ -689,8 +631,6 @@ a.search-form-trigger::before {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity 0.3s 0s, visibility 0s 0s, -webkit-transform 0.3s 0s;
-    transition: opacity 0.3s 0s, visibility 0s 0s, -webkit-transform 0.3s 0s;
-    transition: opacity 0.3s 0s, visibility 0s 0s, transform 0.3s 0s;
     transition: opacity 0.3s 0s, visibility 0s 0s, transform 0.3s 0s, -webkit-transform 0.3s 0s;
 }
 
@@ -714,7 +654,7 @@ a.search-form-trigger::before {
 
 .about-area .area-title h2 span {
     color: #212324;
-    font-family: lato;
+
     font-size: 48px;
     text-transform: uppercase;
 }
