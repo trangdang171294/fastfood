@@ -6,7 +6,7 @@
  * Time: 9:47 PM
  */
 ?>
-
+<!--
 
 <div class="page-barner-area">
     <div class="container wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
@@ -24,7 +24,34 @@
         </div>
     </div>
 </div>
+-->
 
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" style="height: 663px;" role="listbox">
+        <?php foreach ($km_list as $km=>$vl)
+        {?>
+        <div class="item <?php if($km==0) echo "active"; else echo "";?>">
+            <img src="img/khuyenmai/<?php echo $vl->Anh_to?>" alt="<?php echo $vl->Anh_to?>">
+        </div>
+      <?php }?>
+
+        <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+
+
+<!--
 <section class="event-area section-padding">
     <div class="event-area-bg"></div>
     <div class="container wow fadeIn">
@@ -43,7 +70,7 @@
                     </div>
                     <div class="event-content">
                         <div class="event-details">
-                            <h3><a href="#">Ăn thật no giá khỏi lo</a></h3>
+                            <h3><a href="?view=khuyenmai&action=xemct">Ăn thật no giá khỏi lo</a></h3>
                             <p class="event-meta">01-28/02/2017</p>
                             <p>Áp dụng cho tất cả các phần ăn combo</p>
                         </div>
@@ -63,5 +90,37 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+-->
+<section class="event-area section-padding">
+    <div class="event-area-bg"></div>
+    <div class="container wow fadeIn">
+        <div class="row " id="list-km">
+            <div class="container">
+                <div class="row">
+                    <?php foreach ($km_list as $km)
+                    {?>
+                    <div class="col-sm-4">
+                        <a href="?view=khuyenmai&action=xemct&ma=<?php echo $km->Ma_km?>" class="thumnail1">
+                            <img src="img/khuyenmai/<?php echo $km->image?>" >
+                            <p><?php echo $km->Ten_km?></p>
+
+                            <p class="date" style="padding-top: 0px;padding-bottom: 10px">
+                           <span><?php
+                               $d_st= date_create($km->Date_start);
+                               $d_end= date_create($km->Date_end);
+                               echo date_format($d_st,"d/m/Y")." - ".date_format($d_end,"d/m/Y");
+                               ?></span>
+                            </p>
+                        </a>
+                    </div>
+                    <?php }?>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
 </section>

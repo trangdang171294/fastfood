@@ -1,0 +1,29 @@
+.logo img{
+    width: 15%;
+}
+#page{
+    padding: 16px;
+    padding-left: 50px;
+}
+body{
+    width: 500px;
+}
+.header{
+    text-align: center;
+}
+.title{
+    text-align: center;
+    margin-top: -17px;
+}
+@page {
+    size: A5;
+    margin: 0;
+}
+.infor{
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-top: 14px;
+}
+.infor .p{
+
+}

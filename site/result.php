@@ -1,20 +1,14 @@
-
 <?php
 /**
  * Created by PhpStorm.
  * User: HP
- * Date: 2/17/2017
- * Time: 9:39 PM
+ * Date: 3/1/2017
+ * Time: 5:07 PM
  */
 include_once ("model/m_mon_an.php");
 $foodmodel= new m_mon_an();
 $new_food= $foodmodel->getnewfood();
-//print_r($new_food);
-
-
 ?>
-
-
 <div class="page-barner-area" style="background-image: url(img/contact_page_barner.jpg)">
     <div class="container wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
         <div class="row">
@@ -33,40 +27,40 @@ $new_food= $foodmodel->getnewfood();
 </div>
 
 <div class="container-fluid" id="bg-product">
-
-<div class="wrapper wrap-content" >
+<div class="wrapper wrap-content">
 
     <div class="wrap-pro">
         <ul class="list-pro">
 
-         <!--   <li class="item-01 item-0 first">
-                <a href="http://www.lotteria.vn/vn/thuc-don/chi-tiet/397/big-pork-combo/"><img src="http://www.lotteria.vn/resize.php?w=250&amp;h=250&amp;src=data/201635/2a_5896.png&amp;zc=1" alt=""></a>
-                <h2><a href="http://www.lotteria.vn/vn/thuc-don/chi-tiet/397/big-pork-combo/">BIG PORK COMBO</a></h2>
-                <p class="price"><span>69,000 đ</span></p>
-                <a href="javascript:;" data-id="397" class="order OrderCart">Chọn</a>
-            </li>
-            -->
+            <!--   <li class="item-01 item-0 first">
+                   <a href="http://www.lotteria.vn/vn/thuc-don/chi-tiet/397/big-pork-combo/"><img src="http://www.lotteria.vn/resize.php?w=250&amp;h=250&amp;src=data/201635/2a_5896.png&amp;zc=1" alt=""></a>
+                   <h2><a href="http://www.lotteria.vn/vn/thuc-don/chi-tiet/397/big-pork-combo/">BIG PORK COMBO</a></h2>
+                   <p class="price"><span>69,000 đ</span></p>
+                   <a href="javascript:;" data-id="397" class="order OrderCart">Chọn</a>
+               </li>
+               -->
             <?php
-//            var_dump($bang_mon_an);
+            //          var_dump($bang_mon_an);
             ?>
-            <?php foreach ($bang_mon_an as $mon)
+            <?php foreach ($mon_an_tk as $mon)
             {
                 ?>
+                <!--                <input type="hidden" id="Ma_loai" name="Ma_loai" values="--><!--"/>-->
                 <li>
                     <?php foreach ($new_food as $n_food)
                     {
                         if($mon->Ma_mon_an == $n_food->Ma_mon_an)
                         {
-                        ?>
+                            ?>
                             <img src="img/new-512.png" style=" width: 70px;position: absolute;"><?php }?>
-                   <?php }?>
+                    <?php }?>
                     <a href="?view=product_burger&action=des_monan&Ma_mon_an=<?=$mon->Ma_mon_an;?>&ma_loai=<?= $mon->Ma_loai?>"><img
-                                src="img/monan/<?=$mon->Hinh_anh ?>"
-                                alt=""></a>
-                    <h2><a href="#"><?php echo $mon->Ten_mon_an ?> -Mã: <?php echo $mon->Ma_mon_an ?></a>
+                            src="img/monan/<?=$mon->Hinh_anh ?>"
+                            alt=""></a>
+                    <h2><a href="#"><?php echo $mon->Ten_mon_an ?>-mã: <?=$mon->Ma_mon_an;?></a>
                     </h2>
                     <p class="price"><span><?php echo number_format( $mon->Don_gia) ?> đ</span></p>
-                    <a href="?view=product_burger&action=insertcart&Ma_mon_an=<?=$mon->Ma_mon_an;?>&ma_loai=<?php echo $mon->Ma_loai?>" name="btnAddCart" class="order OrderCart">Chọn</a>
+                    <a href="?view=product_burger&action=insertcartct&Ma_mon_an=<?=$mon->Ma_mon_an;?>&ma_loai=<?php echo $mon->Ma_loai?>" class="order OrderCart">Chọn</a>
                 </li>
                 <?php
             }?>
@@ -84,7 +78,6 @@ $new_food= $foodmodel->getnewfood();
         -->
 </div>
 </div>
-
 <div id="float-nav" class="pro">
     <a href="?view=product_burger&action=hienthigiohang" class="cart cartNumber"><span class="fa fa-shopping-cart" style="display: inherit;font-size: 23px;"></span>
         <?php
@@ -101,12 +94,11 @@ $new_food= $foodmodel->getnewfood();
             */
             foreach($_SESSION['giohang'] as $k=>$v){
 
-                    $tongsl=$tongsl+$v;
+                $tongsl=$tongsl+$v;
             }
             $_SESSION["tongsoluong"]=$tongsl;
             echo $_SESSION["tongsoluong"];
         }
-            else echo 0?>
+        else echo 0?>
     </a>
 </div>
-

@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="page-barner-area">
+<div class="page-barner-area" style="background-image: url(img/about_page_barner.jpg)">
     <div class="container wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
         <div class="row">
             <div class="col-md-12 col-xs-12">
@@ -41,7 +41,7 @@
                         </div>
                         <div class="blog-content">
                             <p>Donec finibus sit amet orci eget ultricies. Praesent posuere ante ut erat fringilla, vestibulum placerat metus mattis. Aenean dictum vitae nisl nec tempor. Proin varius turpis ut sem porttitor varius. Sed aliquet libero ultrices consectetur. Vivamus egestas, metus quis egestas egestas tortor justo pharetra diam, et dapibus massa nibh dapibus</p>
-                            <a href="single-blog.html" class="read-more">Xem thêm</a>
+                            <a href="?view=tintuc&action=xemtt" class="read-more">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -134,6 +134,9 @@
                 </div>
             </div>
         </div>
+
+
+
         <!--danh so trang-->
         <div class="row">
             <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">

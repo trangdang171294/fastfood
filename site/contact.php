@@ -8,7 +8,7 @@
 
 ?>
 
-<div class="page-barner-area">
+<div class="page-barner-area"  style="background-image: url(img/about_page_barner.jpg)">
     <div class="container wow fadeIn">
         <div class="row">
             <div class="col-md-12 col-xs-12">
@@ -64,36 +64,42 @@
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="contact-form">
-                    <form action="process.php" id="contact-form" method="post">
+
+
+
+                    <form action="" id="contact-form" method="post">
                         <div class="form-group" id="name-field">
                             <div class="form-input col-md-6">
-                                <input type="text" class="form-control" id="form-name" name="form-name" placeholder="Your Name" required>
+                                <input type="text" class="form-control" id="form_name" name="form_name" placeholder="Your Name" required>
                             </div>
                         </div>
                         <div class="form-group" id="email-field">
                             <div class="form-input col-md-6">
-                                <input type="email" class="form-control" id="form-email" name="form-email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" id="form_email" name="form_email" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div class="form-group" id="phone-field">
                             <div class="form-input col-md-6">
-                                <input type="text" class="form-control" id="form-phone" name="form-phone" placeholder="Your Phone No">
+                                <input type="text" class="form-control" id="form_phone" name="form_phone" placeholder="Your Phone No">
                             </div>
                         </div>
                         <div class="form-group" id="subject-field">
                             <div class="form-input col-md-6">
-                                <input type="text" class="form-control" id="form-subject" name="form-subject" placeholder="Your Subject">
+                                <input type="text" class="form-control" id="form_subject" name="form_subject" placeholder="Your Subject">
                             </div>
                         </div>
                         <div class="form-group" id="message-field">
                             <div class="form-input col-md-12">
-                                <textarea class="form-control" rows="6" id="form-message" name="form-message" placeholder="Your Message" required></textarea>
+                                <textarea class="form-control" rows="6" id="form_message" name="form_message" placeholder="Your Message" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit">Send Message</button>
+                            <button type="submit" name="btnContact" id="btnContact">Send Message</button>
                         </div>
                     </form>
+
+
+                    
                 </div>
             </div>
         </div>

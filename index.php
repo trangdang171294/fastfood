@@ -1,13 +1,27 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HP
- * Date: 2/17/2017
- * Time: 9:28 PM
- */
+session_start();
+include_once('model/database.php');
+include_once('model/m_mon_an.php');
+include_once('controller/c_mon_an.php');
+include_once ('model/typeFoodModel.php');
+include_once ('controller/typeFoodController.php');
+$MonanController= new C_mon_an();
+$typeFoodController= new typeFoodController();
+include_once ('model/m_giohang.php');
+include_once ('controller/c_giohang.php');
+$giohangcontroller= new c_giohang();
+include_once ("model/km_model.php");
+include_once ("controller/km_Controller.php");
+$km_controller= new km_Controller();
+include_once ("backend/model/m_contact.php");
+include_once ("backend/controller/c_contact.php");
+$contactController= new c_contact();
 ?>
 
 <!doctype html>
+
+
+
 
 <html class="no-js" lang="en">
 <!--<![endif]-->
@@ -15,6 +29,7 @@
 <head>
     <!--====== USEFULL META ======-->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--====== TITLE TAG ======-->
     <title>Fast food</title>
@@ -26,7 +41,7 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/magnific-popup.css"> <!--reponsive popup-->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -35,23 +50,22 @@
 
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/search_error.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/detail_productcss.css">
+    <link rel="stylesheet" href="css/hoadon.css">
+
     <script src="js/vendor/modernizr-2.8.3.min.js"></script> <!--search-->
 
 </head>
-<?php
-include_once('model/database.php');
-include_once('model/m_mon_an.php');
-include_once('controller/c_mon_an.php');
-$MonanController = new C_mon_an();
-?>
 <body>
 
 <div class="header">
 
     <?php
-    include_once('site/header.php')
+    $typeFoodController->Loai_mon_an_header();
+
     ?>
 </div>
 
@@ -61,8 +75,93 @@ $MonanController = new C_mon_an();
 
 
     <?php
-    include_once ('site/home.php');
-  //  $MonanController->Hien_thi_mon_an();
+    $view = isset($_REQUEST["view"]) ? $_REQUEST["view"] : "";
+    switch ($view)
+    {
+        case "product_burger":
+            $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : "";
+            switch ($action) {
+                case "des_monan":
+                    $MonanController->Hien_thi_mon_an_theo_ma();
+                    break;
+                case "insertcart":
+                    $giohangcontroller->insertcart_listfood();
+                    break;
+                case "insertcartct":
+                    $giohangcontroller->insertcart_ctfood();
+                    break;
+                case "hienthigiohang":
+                    $giohangcontroller->hienthigiohang();
+                    break;
+                case "updatecart":
+                    $giohangcontroller->updatecart();
+                    break;
+                case "xoagiohang":
+                    $giohangcontroller->xoagiohang();
+                    break;
+                case "thanhtoan":
+                    $giohangcontroller->themdh();
+                    break;
+                default:
+                    $MonanController->Hien_thi_mon_an_theo_loai();
+                    break;
+            }
+            break;
+        case "new_food":
+            $MonanController->get_new_food();
+            break;
+            /*
+        case "giohang":
+            $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : "";
+            switch ($action) {
+                default:
+                    $MonanController->Hien_thi_mon_an_theo_loai();
+                    break;
+            }
+            break;*/
+        case "Search":
+            $MonanController->Timkiem();
+            break;
+        case "khuyenmai":
+
+    $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : "";
+    switch ($action)
+    {
+        case "xemct":
+            $km_controller->Hienkm_ID();
+            $km_controller->Hiendskm_CTKM();
+            break;
+        default:
+            $km_controller->Hiendskm();
+            break;
+    }
+            break;
+        case "tintuc":
+            $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : "";
+            switch ($action)
+            {
+                case "xemtt":
+                    include_once ("site/single_tintuc.php");
+                    break;
+                default:
+                    include_once ("site/tintuc.php");
+                    break;
+            }
+            break;
+        case "contact":
+            $contactController->Send_contact();
+            break;
+        case "hd" :
+            include_once ("site/giohang.php");
+            break;
+
+        default:
+            $typeFoodController->Hien_thi_loai_mon_an();
+            $MonanController->Hien_thi_mon_an_theo_loai_home();
+            $km_controller->Hienkm_home();
+            break;
+    }
+
     ?>
 
 </div>
@@ -90,6 +189,7 @@ $MonanController = new C_mon_an();
 <script src="js/jquery.sticky.js"></script> <!--menu wrapper-->
 <!--===== ACTIVE JS=====-->
 <script src="js/main.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
 <!--slick slider-->
 <script type="text/javascript">
     $(document).on('ready', function () {

@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="page-barner-area">
+<div class="page-barner-area" style="background-image: url(img/about_page_barner.jpg)">
     <div class="container wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
         <div class="row">
             <div class="col-md-12 col-xs-12">
