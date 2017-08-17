@@ -31,11 +31,17 @@ class M_mon_an extends database
     }
     public function getFoodbyname($name)
     {
-        $sql ="SELECT mon_an.Ma_mon_an,mon_an.Ma_loai,loai_mon_an.Ten_loai,mon_an.Ten_mon_an,mon_an.Don_gia,mon_an.Hinh_anh,mon_an.Mo_ta FROM mon_an INNER JOIN loai_mon_an on mon_an.Ma_loai=loai_mon_an.Ma_loai WHERE mon_an.Ten_mon_an LIKE '%$name%' OR mon_an.Mo_ta LIKE '%$name%' OR loai_mon_an.Ten_loai LIKE '%$name%'";
+        $sql ="SELECT mon_an.Ma_mon_an,mon_an.Ma_loai,loai_mon_an.Ten_loai,mon_an.Ten_mon_an,mon_an.Don_gia,mon_an.Hinh_anh,mon_an.Mo_ta FROM mon_an INNER JOIN loai_mon_an on mon_an.Ma_loai=loai_mon_an.Ma_loai WHERE mon_an.Ten_mon_an LIKE '%$name%' OR mon_an.Mo_ta LIKE '%$name%' OR loai_mon_an.Ten_loai LIKE '%$name%' OR mon_an.Ma_mon_an LIKE '%$name%'";
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
 
+    public function searchfood_salepage($name)
+    {
+        $sql ="SELECT mon_an.Ma_mon_an,mon_an.Ma_loai,loai_mon_an.Ten_loai,mon_an.Ten_mon_an,mon_an.Don_gia,mon_an.Hinh_anh,mon_an.Mo_ta FROM mon_an INNER JOIN loai_mon_an on mon_an.Ma_loai=loai_mon_an.Ma_loai WHERE mon_an.Ten_mon_an LIKE '%$name%' OR loai_mon_an.Ten_loai LIKE '%$name%' OR mon_an.Ma_mon_an ='$name'";
+        $this->setQuery($sql);
+        return $this->loadAllRows();
+    }
     public function getnewfood()
     {
         $sql="SELECT * from mon_an ORDER BY mon_an.Ma_mon_an DESC LIMIT 10";

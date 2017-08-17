@@ -16,36 +16,6 @@
                 </div>
             </div>
         </div>
-        <!--
-        <div class="row event-list">
-            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                <div class="single-event">
-                    <div class="event-img">
-                        <img src="img/km1.png" alt="">
-                    </div>
-                    <div class="event-content">
-                        <div class="event-details">
-                            <h3><a href="#">Ăn thật no giá khỏi lo</a></h3>
-                            <p class="event-meta">01-28/02/2017</p>
-                            <p>Áp dụng cho tất cả các phần ăn combo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-event">
-                    <div class="event-img">
-                        <img src="img/km2.png" alt="">
-                    </div>
-                    <div class="event-content">
-                        <div class="event-details">
-                            <h3><a href="#">Bữa trưa vui vẻ</a></h3>
-                            <p class="event-meta">Áp dụng từ thứ 2- thứ 6, từ 11h đến 14h</p>
-                            <p>Giá chỉ từ 32000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
         <div class="row " id="list-km">
             <div class="container">
                 <div class="row">

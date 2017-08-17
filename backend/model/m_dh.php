@@ -10,14 +10,14 @@ class m_dh extends database
 {
     public function getalldh()
     {
-        $sql= "select * from don_dat_hang ORDER BY MDH DESC ";
+        $sql= "select * from don_dat_hang WHERE don_dat_hang.Type_order=0 ORDER BY MDH DESC ";
         $this->setQuery($sql);
         return $this->loadAllRows();
     }
 
     public function getdhbyID($MDH)
     {
-        $sql="select * from don_dat_hang WHERE MDH=?";
+        $sql="select * from don_dat_hang WHERE MDH=? AND don_dat_hang.Type_order=0";
         $this->setQuery($sql);
         return $this->loadRow(array($MDH));
     }

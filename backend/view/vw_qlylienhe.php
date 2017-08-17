@@ -25,7 +25,7 @@
 
     <div class="row ">
         <div class="col-lg-12">
-            <span style="color:red;"></span>
+            <span style="color:red;"><?php echo isset($thongbao) ? $thongbao : ""; ?></span>
 
             <div class="table-responsive">
                 <form name="form1" method="post" action="">
@@ -53,7 +53,7 @@
                                 switch ($st)
                                 {
                                     case "0":
-                                        echo "Chưa Duyệt";
+                                        echo "<strong style='color: red'>Chưa Duyệt</strong>";
                                         break;
                                     case "1":
                                         echo "Đã Duyệt";
@@ -65,9 +65,9 @@
                             </td>
                             <td width="56" height="80" align="center">   <a href="?view=QLLH&action=xemct&MLH=<?php echo $contact->MLH?>"> <button type="button" class="btn btn-primary" name="btnXemChiTiet" ><i class="fa fa-eye" title="xem chi tiết"></i></button></a></td>
                             <td width="56"align="center">
-                                <a href="?view=QLLH&action=update&MLH=<?php echo $contact->MLH?>"> <button type="button" class="btn btn-success" name="btnXemChiTiet" ><i class="fa fa-pencil" title="Cập nhật"></i></button></a>
+                                <a href="?view=QLLH&action=reply&MLH=<?php echo $contact->MLH?>"> <button type="button" class="btn btn-success" name="btnSua" ><i class="fa fa-pencil" title="trả lời"></i> Trả lời </button></a>
                             </td>
-                            <td width="56"  height="80"align="center"><a href="?module=QLkhachhang&view=Delete&Ma_khach_hang=14"  onClick="return confirm('Bạn có chắc chắn xóa khách hàng\'minhvu\' này không ?')"class="btn btn-danger" title="Loại bỏ"><i class="fa fa-trash " ></i></a></td>
+                            <td width="56"  height="80"align="center"><a href="?view=QLLH&action=xoa&MLH=<?= $contact->MLH?>"  onClick="return confirm('Bạn có chắc chắn xóa  không ?')"class="btn btn-danger" title="Loại bỏ"><i class="fa fa-trash " ></i></a></td>
                         </tr>
                         <?php }?>
 

@@ -32,6 +32,7 @@
                 </ul>
             </li>
             <li><a href="?view=QLDH"><i class="lnr lnr-pencil"></i> <span>Quản Lý Đơn Hàng</span></a></li>
+            <li><a href="?view=QLuser"><i class="lnr lnr-pencil"></i> <span>Quản Lý Người dùng</span></a></li>
             <li><a href="?view=QLKM"><i class="lnr lnr-pencil"></i> <span>Quản lý Chương Trình Khuyến Mại</span></a></li>
             <li><a href="?view=QLTT"><i class="lnr lnr-pencil"></i> <span>Quản lý Bài Viết Tin Tức</span></a></li>
             <li><a href="?view=QLLH"><i class="lnr lnr-pencil"></i> <span>Quản Lý Liên Hệ</span></a></li>

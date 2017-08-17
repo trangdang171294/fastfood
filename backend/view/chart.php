@@ -115,7 +115,7 @@ font-size: 30px">
             <?php }?>
         ]);
         var options = {
-            title: 'Sản phẩm bán chạy theo tháng',
+            title: 'Sản phẩm bán chạy trong tháng',
             hAxis: {
                 title: 'sản phẩm',
                 viewWindow: {

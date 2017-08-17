@@ -55,10 +55,10 @@
                                 {
                                     case "1": echo "Hoàn thành";
                                         break;
-                                    case "2": echo "Đang xử lý";
+                                    case "2": echo "<strong style='color: orange'>Đang xử lý</strong>";
                                         break;
                                     default:
-                                        echo "Chưa xử lý";
+                                        echo "<strong style='color: red'>Chưa xử lý</strong>";
                                 }
                                 ?></td>
                         </tr>

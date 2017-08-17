@@ -18,10 +18,22 @@ class typefoodController
 
     public function listtypefood()
     {
-        $dstypefood= $this->typeFoodController->getAlltype();
+        $dstypefood= $this->gettypefood();
         $thongbao=$this->message;
         include_once ("view/vw_qlyloaimonan.php");
     }
+
+    public function Hientypefood()
+    {
+        $type_foods= $this->gettypefood();
+        include_once ("view/salestaff/typefood.php");
+    }
+
+    public function gettypefood()
+    {
+        return $this->typeFoodController->getAlltype();
+    }
+
 
     public function Them_loai()
     {

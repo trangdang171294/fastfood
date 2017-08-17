@@ -5,6 +5,9 @@
  * Date: 2/17/2017
  * Time: 9:31 PM
  */
+include_once ('model/m_giohang.php');
+include_once ('controller/c_giohang.php');
+$giohangcontroller= new c_giohang();
 ?>
 
 
@@ -29,8 +32,25 @@
                             <div class="giohang">
                                 <a href="?view=product_burger&action=hienthigiohang"> <span class="fa fa-shopping-cart"></span><span style="font-size: 15px;margin-left: 10px;">(
                                         <?php
+                                        $giohangcontroller->insertcart();
+                                        $giohangcontroller->deleteCart();
+                                        $giohangcontroller->update_item_cart();
+                                        $tongsl=0;
+
                                         if(isset($_SESSION["giohang"]))
                                         {
+                                            /*
+                                            for($i=0;$i<count($_SESSION["giohang"]);$i++)
+                                            {
+                                                $tongsl +=$_SESSION["giohang"][$i]["soluong"];
+                                                $_SESSION["tongsoluong"]=$tongsl;
+                                            }
+                                            */
+                                            foreach($_SESSION['giohang'] as $k=>$v){
+
+                                                $tongsl=$tongsl+$v;
+                                            }
+                                            $_SESSION["tongsoluong"]=$tongsl;
                                             echo $_SESSION["tongsoluong"];
                                         }
                                         else echo 0?>)

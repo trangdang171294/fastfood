@@ -43,7 +43,7 @@ $other_food= $MonanController->get_other_food();
                 <h1 class="title"><?php echo $mon_an_detail->Ten_mon_an?></h1>
                 <p class="cal"></p>
                 <p class="price" >Giá: <?php echo number_format( $mon_an_detail->Don_gia) ?> đ</p>
-                <a href="?view=product_burger&action=insertcartct&Ma_mon_an=<?=$mon_an_detail->Ma_mon_an;?>&ma_loai=<?php echo $mon_an_detail->Ma_loai?>" class="addcart OrderCart">Chọn</a>
+                <a href="?view=product_burger&action=des_monan&Ma_mon_insert=<?=$mon_an_detail->Ma_mon_an;?>&Ma_mon=<?=$mon_an_detail->Ma_mon_an;?>&ma_loai=<?php echo $mon_an_detail->Ma_loai?>" class="addcart OrderCart">Chọn</a>
             </div>
             <div class="box">
 
@@ -54,7 +54,7 @@ $other_food= $MonanController->get_other_food();
             </div>
         </div>
     </div>
-    <div class="other_food" >
+    <div class="other_food"style="padding-bottom: 50px" >
         <h3 style="    position: relative;
     top: 20px;
     left: 57px;">Món ăn cùng loại</h3>
@@ -70,13 +70,13 @@ $other_food= $MonanController->get_other_food();
                         ?>
                         <!--                <input type="hidden" id="Ma_loai" name="Ma_loai" values="--><!--"/>-->
                         <li>
-                            <a href="?view=product_burger&action=des_monan&Ma_mon_an=<?=$mon->Ma_mon_an;?>&ma_loai=<?= $mon->Ma_loai?>"><img
+                            <a href="?view=product_burger&action=des_monan&Ma_mon=<?=$mon->Ma_mon_an;?>&ma_loai=<?= $mon->Ma_loai?>"><img
                                         src="img/monan/<?=$mon->Hinh_anh ?>"
                                         alt=""></a>
                             <h2><a href="#"><?php echo $mon->Ten_mon_an ?> -Mã: <?php echo $mon->Ma_mon_an ?></a>
                             </h2>
                             <p class="price"><span><?php echo number_format( $mon->Don_gia) ?> đ</span></p>
-                            <a href="?view=product_burger&action=insertcartct&Ma_mon_an=<?=$mon->Ma_mon_an;?>&ma_loai=<?php echo $mon->Ma_loai?>" name="btnAddCart" class="order OrderCart">Chọn</a>
+                            <a href="?view=product_burger&action=des_monan&Ma_mon_insert=<?=$mon->Ma_mon_an;?>&Ma_mon=<?=$mon_an_detail->Ma_mon_an?>&ma_loai=<?php echo $mon->Ma_loai?>" name="btnAddCart" class="order OrderCart">Chọn</a>
                         </li>
                         <?php
                     }?>

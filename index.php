@@ -85,10 +85,10 @@ $contactController= new c_contact();
                     $MonanController->Hien_thi_mon_an_theo_ma();
                     break;
                 case "insertcart":
-                    $giohangcontroller->insertcart_listfood();
+                    $giohangcontroller->getmonanbyloai();
                     break;
-                case "insertcartct":
-                    $giohangcontroller->insertcart_ctfood();
+                case 'insertcart_newpro':
+                    $MonanController->get_new_food();
                     break;
                 case "hienthigiohang":
                     $giohangcontroller->hienthigiohang();

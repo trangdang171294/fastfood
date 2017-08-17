@@ -45,8 +45,12 @@
                         <tr>
                             <td width="200">Duyệt</td>
                             <td><?php $status=$contact->Duyet;
-                            $duyet= ($status==1) ? "Đã Duyệt" : "Chưa Duyệt";
-                            echo $duyet;
+//                            $duyet= ($status==1) ? "Đã Duyệt" : "Chưa Duyệt";
+                                if($status==1)
+                                    echo "Đã duyệt";
+                                else
+                                    echo "<p style='color: red'>Chưa duyệt</p>"
+
                                 ?></td>
                         </tr>
 
@@ -58,9 +62,9 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <a href="?view=QLKM&action=Suakm&m_km=<?php echo $km_detail->Ma_km?>"> <button type="button" class="btn btn-success" name="btnSua" ><i class="fa fa-pencil" title="cập nhật status"></i> Sửa </button></a>
-                <a href="?view=QLKM&action=xoakm&m_km=<?php echo $km_detail->Ma_km?>"  onClick="return confirm('Bạn có chắc chắn xóa đơn hàng này không ?')"class="btn btn-danger" title="Loại bỏ"><i class="fa fa-trash " ></i> Xóa</a>
-                <a href="?view=QLKM"> <button type="button" class="btn btn-primary" name="btnback" ><i class="fa fa-undo" title="Quay lại"></i> Quay lại </button></a>
+                <a href="?view=QLLH&action=reply&MLH=<?php echo $contact->MLH?>"> <button type="button" class="btn btn-success" name="btnSua" ><i class="fa fa-pencil" title="trả lời"></i> Trả lời </button></a>
+                <a href="?view=QLLH&action=xoa&MLH=<?= $contact->MLH?>"  onClick="return confirm('Bạn có chắc chắn xóa không ?')"class="btn btn-danger" title="Loại bỏ"><i class="fa fa-trash " ></i></a>
+                <a href="?view=QLLH"> <button type="button" class="btn btn-primary" name="btnback" ><i class="fa fa-undo" title="Quay lại"></i> Quay lại </button></a>
             </div>
         </div>
     </div>

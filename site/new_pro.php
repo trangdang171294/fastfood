@@ -31,13 +31,7 @@
         <div class="wrap-pro">
             <ul class="list-pro">
 
-                <!--   <li class="item-01 item-0 first">
-                       <a href="http://www.lotteria.vn/vn/thuc-don/chi-tiet/397/big-pork-combo/"><img src="http://www.lotteria.vn/resize.php?w=250&amp;h=250&amp;src=data/201635/2a_5896.png&amp;zc=1" alt=""></a>
-                       <h2><a href="http://www.lotteria.vn/vn/thuc-don/chi-tiet/397/big-pork-combo/">BIG PORK COMBO</a></h2>
-                       <p class="price"><span>69,000 đ</span></p>
-                       <a href="javascript:;" data-id="397" class="order OrderCart">Chọn</a>
-                   </li>
-                   -->
+
                 <?php
                 //            var_dump($bang_mon_an);
                 ?>
@@ -49,13 +43,13 @@
                         <img src="img/new-512.png" style=" width: 70px;
     position: absolute;
    ">
-                        <a href="?view=product_burger&action=des_monan&Ma_mon_an=<?=$mon->Ma_mon_an;?>&ma_loai=<?php echo $mon->Ma_loai?>"><img
+                        <a href="?view=product_burger&action=des_monan&Ma_mon=<?=$mon->Ma_mon_an;?>&ma_loai=<?php echo $mon->Ma_loai?>"><img
                                 src="img/monan/<?=$mon->Hinh_anh ?>"
                                 alt=""></a>
                         <h2><a href="#"><?php echo $mon->Ten_mon_an ?> -Mã: <?php echo $mon->Ma_mon_an ?></a>
                         </h2>
                         <p class="price"><span><?php echo number_format( $mon->Don_gia) ?> đ</span></p>
-                        <a href="?view=product_burger&action=insertcart&Ma_mon_an=<?=$mon->Ma_mon_an;?>&ma_loai=<?php echo $mon->Ma_loai?>" name="btnAddCart" class="order OrderCart">Chọn</a>
+                        <a href="?view=product_burger&action=insertcart_newpro&Ma_mon_insert=<?=$mon->Ma_mon_an;?>&ma_loai=<?php echo $mon->Ma_loai?>" name="btnAddCart" class="order OrderCart">Chọn</a>
                     </li>
                     <?php
                 }?>
@@ -65,12 +59,7 @@
 
         <div style="margin-top:10px;">
         </div>
-        <!--
-            <div id="float-nav" class="pro">
-                <a href="http://www.lotteria.vn/vn/dat-hang/" class="cart cartNumber">0</a>
-                <a href="http://www.lotteria.vn/vn/khuyen-mai/" class="gift">Gift</a>
-            </div>
-            -->
+
     </div>
 </div>
 

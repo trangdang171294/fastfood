@@ -26,7 +26,7 @@ class Database
             + $user: chứa tên đăng nhập của tài khoản để truy cập vào MySQL
             + $pass: mật khẩu của tài khoản
     */
-    public function __construct($hostname="localhost", $dbname="fastfood", $user="root",$pass=""){
+    public function __construct($hostname="localhost", $dbname="fastfood1", $user="root",$pass=""){
         try		{
             $this->conn = new PDO("mysql:host=$hostname; dbname=$dbname; charset=utf8","$user","$pass");
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

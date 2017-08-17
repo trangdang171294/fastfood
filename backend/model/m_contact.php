@@ -29,10 +29,16 @@ class m_contact extends database
         return $this->loadRow(array($MLH));
     }
 
-    public function EditContac($name,$email,$phone,$title,$content,$status,$MLH)
+    public function EditContac($status,$MLH)
     {
-        $sql="UPDATE lien_he SET Ho_ten=?,Email=?,Dien_thoai=?,Tieu_de=?,Noi_dung=?,Duyet=? WHERE MLH=?";
+        $sql="UPDATE lien_he SET Duyet=? WHERE MLH=?";
         $this->setQuery($sql);
-        return $this->execute(array($name,$email,$phone,$title,$content,$status,$MLH));
+        return $this->execute(array($status,$MLH));
+    }
+    public function delete_contact($MLH)
+    {
+        $sql="DELETE FROM lien_he WHERE MLH=?";
+        $this->setQuery($sql);
+        return $this->execute(array($MLH));
     }
 }

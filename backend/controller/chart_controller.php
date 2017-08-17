@@ -57,9 +57,10 @@ class chart_controller
         foreach ($result as $row)
         {
             $current_doanhthu= $row->doanhthu;
-            @$last_month=  $result[$row-1];
+            @$last_month=  $result[$row-0]; //???
             $doanhthu_lastmonth= $last_month->doanhthu;
         }
+
         $ty_le =($current_doanhthu-$doanhthu_lastmonth)/$doanhthu_lastmonth*100;
         $ty_le=(int)$ty_le;
         return $ty_le;

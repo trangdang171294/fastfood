@@ -27,18 +27,30 @@ if(isset($_REQUEST['action']) and $_REQUEST["action"]== 'logout' )
 }
 ?>
 
-<h1>CHÀO:<?php echo $_SESSION["username"]?> đến với trang bán hàng</h1>
+<?php
+include_once ("model/database.php");
+include_once ("model/typefoodModel.php");
+include_once ("controller/typefoodController.php");
+$typefoodController= new typeFoodController();
+include_once ("../model/m_mon_an.php");
+include_once ("../controller/c_mon_an.php");
+$foodController= new c_mon_an();
+include_once ("../model/m_giohang.php");
+include_once ('../controller/c_giohang.php');
+$giohangcontroller = new c_giohang();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Fast Food Admin</title>
+    <title>Trang bán hàng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <link href="css/salespage_css.css" rel="stylesheet">
-
+    <link href="css/hoadon.css" rel="stylesheet">
     <!-- Graph CSS -->
     <link href="css/font-awesome.css" rel="stylesheet">
     <!-- jQuery -->
@@ -59,8 +71,87 @@ if(isset($_REQUEST['action']) and $_REQUEST["action"]== 'logout' )
 
     <!--//skycons-icons-->
 </head>
-<body>
+<body style="background-color: azure;">
 
+<div class="menu">
+    <nav class="navbar navbar-inverse" id="menu">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="?view=home">
+                    <h1>Burger Shack</h1>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                </ul>
+
+                <form class="navbar-form navbar-left" method="post" action="?view=Search">
+                    <div class="form-group">
+                        <input type="search" name="name" class="form-control" placeholder="Search food">
+                    </div>
+                  <!--  <button type="submit" class="btn btn-default">Submit</button>-->
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="#">Sales staff: <?php echo $_SESSION["username"]?></a></li>
+                    <li><a href="?action=logout"><span class="fa fa-power-off"></span> Log out</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+</div>
+<div class="content">
+    <div class="row">
+        <div class="right-content col-lg-7" >
+            <?php
+            $view = isset($_REQUEST['view']) ? $_REQUEST['view'] : "";
+            switch ($view)
+            {
+                case "food":
+                    $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : "";
+                    switch ($action)
+                    {
+                        case "insertcart":
+                            $giohangcontroller->insertcart_salefood();
+                            break;
+                        case "xoagiohang":
+                            $giohangcontroller->deleteitem_cart();
+                            break;
+                        case "updatecart":
+                            $giohangcontroller->updateitem_dh();
+                            break;
+                        case "thanhtoan":
+                            $giohangcontroller->Them_Hoadon();
+                            break;
+                        default:
+                            $foodController->Hien_thi_mon_an_theo_loai_salepage();
+                            break;
+                    }
+                    break;
+                case "home":
+                    $typefoodController->Hientypefood();
+                    break;
+                case "Search":
+                    $foodController->search_salepage();
+                    break;
+                default:
+                    $typefoodController->Hientypefood();
+                    break;
+            }
+            ?>
+        </div>
+        <div class="left-content col-lg-5">
+            <?php
+            $giohangcontroller->hiendonhang();
+            ?>
+        </div>
+    </div>
+</div>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<!--Thank you for your invitation. I will come for the interview
+i have a question want to ask, the interview will be in English or Vietnamese. Thank you!-->

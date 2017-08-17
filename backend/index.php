@@ -78,6 +78,10 @@ $contact_Controller= new c_contact();
 include_once ("model/chart_model.php");
 include_once ("controller/chart_controller.php");
 $chartController= new chart_controller();
+include_once ('model/m_login.php');
+include_once ('controller/c_login.php');
+$userController= new c_login();
+include_once ('PHPMailer-master/PHPMailerAutoload.php');
 
 ?>
 
@@ -183,11 +187,32 @@ $chartController= new chart_controller();
                         case "xemct":
                             $contact_Controller->Xemct_contact();
                             break;
-                        case "update":
-                            include_once ("view/vw_updateConatct.php");
+                        case "reply":
+                            $contact_Controller->reply_email();
+                            break;
+                        case "xoa":
+                            $contact_Controller->Xoa_contact();
                             break;
                         default:
                             $contact_Controller->Hienthi_contact();
+                            break;
+                    }
+                    break;
+                case "QLuser":
+                    $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : "";
+                    switch ($action)
+                    {
+                        case "Add":
+                            $userController->Add_role();
+                            break;
+                        case "delete":
+                            $userController->del_user();
+                            break;
+                        case 'update':
+                            $userController->Capnhat_user();
+                            break;
+                        default:
+                            $userController->hien_user();
                             break;
                     }
                     break;
